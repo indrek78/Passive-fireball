@@ -1,0 +1,35 @@
+#!/bin/sh
+f95 -ffree-line-length-0 -fPIC -m64 -c RK_const.f90
+echo RK_const.f90
+f95 -ffree-line-length-0 -fPIC -m64 -c Variables.f90
+echo Variables.f90
+f95 -ffree-line-length-0 -fPIC -m64 -c nr.f90
+echo nr.f90
+f95 -ffree-line-length-0 -fPIC -m64 -c Thermal_distr.f90
+echo Thermal_distr
+f95 -ffree-line-length-0 -fPIC -m64 -c Geometry.f90
+echo Geometry
+f95 -ffree-line-length-0 -fPIC -m64 -c Aux_routines.f90
+echo Aux_routines.f90
+f95 -ffree-line-length-0 -fPIC -m64 -c Ejecta_class_Sphere_homol.f90
+echo Ejecta_class_Sphere_homol.f90
+f95 -ffree-line-length-0 -fPIC -m64 -c Ejecta_class_general.f90
+echo Ejecta_class_general.f90
+f95 -ffree-line-length-0 -fPIC -m64 -c Ejecta_init.f90
+echo Ejecta_init.f90
+f95 -ffree-line-length-0 -fPIC -m64 -c Phys_procs.f90
+echo Phys_procs.f90
+f95 -ffree-line-length-0 -fPIC -m64 -c Initialize_physics.f90
+echo Initialize.f90
+# f95 -ffree-line-length-0 -fPIC -m64 -c MC_init.f90
+# echo MC_init.f90
+f95 -ffree-line-length-0 -fPIC -m64 -c Propagator.f90
+echo Propagator.f90
+f95 -ffree-line-length-0 -fPIC -m64 -c Filename_init.f90
+echo Filename_init.f90
+f95 -ffree-line-length-0 -fPIC -m64 -c Printouts.f90
+echo Printouts.f90
+f95 -ffree-line-length-0 -fPIC -m64 Prog_passive_fireball.f90 Variables.o nr.o Thermal_distr.o Geometry.o Aux_routines.o Ejecta_class_Sphere_homol.o Ejecta_class_general.o Ejecta_init.o Phys_procs.o Initialize_physics.o Propagator.o Printouts.o Filename_init.o
+echo Done
+
+ 
